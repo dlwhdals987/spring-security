@@ -1,1 +1,22 @@
-spring.application.name=study
+spring:
+  application:
+      name: study
+  sql:
+    init:
+      mode: never
+  datasource:
+    url: jdbc:h2:./security
+    username: security
+    password: security1!
+    driver-class-name: org.h2.Driver
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
